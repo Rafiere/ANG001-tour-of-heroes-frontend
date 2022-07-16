@@ -9,16 +9,11 @@ import {HEROES} from "../mock-heroes";
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-    id: 1,
-    name: 'Wolverine'
-  };
-
   heroes: Hero[] = HEROES;
   selectedHero?: Hero;
 
   onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+    this.selectedHero = hero; //Obtendo o "hero" do template e setando ele no objeto "selectedHero".
   }
 
   constructor() {
