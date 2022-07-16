@@ -1,0 +1,10 @@
+<div *ngIf="selectedHero"> <!-- Se não tivermos nenhum herói selecionado, essa div não será exibida. -->
+  <h2>{{ selectedHero.name | uppercase }} Details:</h2>
+  <div><span> id: {{ selectedHero.id }}</span></div>
+  <div><span> nome: {{ selectedHero.name }}</span></div>
+
+  <div>
+    <label for="name">Hero name:</label>
+    <input id="name" [(ngModel)]="selectedHero.name" type="text" placeholder="Name">
+  </div>
+</div>
