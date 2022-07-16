@@ -1,8 +1,23 @@
-<h2>{{hero.name | uppercase }} Details:</h2>
-<div><span> id: {{ hero.id }}</span></div>
-<div><span> nome: {{ hero.name }}</span></div>
+<h2>My Heroes</h2>
 
-<div>
-  <label for="name">Hero name:</label>
-  <input id="name" [(ngModel)]="hero.name" type="text" placeholder="Name">
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      [class.selected]="hero === selectedHero"
+      (click)="onSelect(hero)"> <!-- Adicionará a classe "hero" quando o objeto "hero" for igual ao "selectedHero". -->
+    <span>{{hero.id}} - {{hero.name}}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedHero"> <!-- Se não tivermos nenhum herói selecionado, essa div não será exibida. -->
+  <h2>{{ selectedHero.name | uppercase }} Details:</h2>
+  <div><span> id: {{ selectedHero.id }}</span></div>
+  <div><span> nome: {{ selectedHero.name }}</span></div>
+
+  <div>
+    <label for="name">Hero name:</label>
+    <input id="name" [(ngModel)]="selectedHero.name" type="text" placeholder="Name">
+  </div>
 </div>
+
+
+
