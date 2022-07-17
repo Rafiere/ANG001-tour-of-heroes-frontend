@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span>{{ title }}</span>
+
+<!--  <button mat-icon-button-->
+<!--          aria-label="Heroes List"-->
+<!--          matTooltip="Heroes"-->
+<!--          routerLink="/heroes"> &lt;!&ndash; Quando clicarmos nesse botão, seremos encaminhados para a rota "/heroes", ou seja, o componente dessa rota será exibido, como foi declarado no "app-routing.module.ts". &ndash;&gt;-->
+<!--    <mat-icon>sports_martial_arts</mat-icon>-->
+<!--  </button>-->
+
+  <span fxFlex></span> <!-- Diretiva do Angular Flex Layout que insere um flex do CSS para deitar o componente à direita. -->
+  <button mat-icon-button
+          aria-label="menuItem.toolTipText"
+          [matTooltip]="menuItem.toolTipText"
+          [routerLink]="[menuItem.routerLink]"
+          *ngFor="let menuItem of menuItems"> <!-- Quando clicarmos nesse botão, seremos encaminhados para a rota "/heroes", ou seja, o componente dessa rota será exibido, como foi declarado no "app-routing.module.ts". -->
+    <mat-icon>{{menuItem.icon}}</mat-icon>
+  </button>
+
+</mat-toolbar> <!-- Adicionando a cor primária do Angular Material. -->
+
