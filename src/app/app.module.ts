@@ -6,18 +6,16 @@ import {HeroesComponent} from './heroes/heroes.component';
 import {FormsModule} from "@angular/forms";
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MessagesComponent} from './messages/messages.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AppRoutingModule} from './app-routing.module';
-import {MaterialModule} from "./material/material.module";
+import {CoreModule} from "./core/core.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent,
     DashboardComponent
   ],
   imports: [
@@ -25,8 +23,7 @@ import {MaterialModule} from "./material/material.module";
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FlexLayoutModule,
-    MaterialModule
+    CoreModule //O "CoreModule" só deve ser importado dentro do "app.module".
   ],
   providers: [],
   bootstrap: [AppComponent]
