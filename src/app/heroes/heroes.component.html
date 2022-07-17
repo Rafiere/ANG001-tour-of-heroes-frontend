@@ -1,14 +1,10 @@
-<h2>My Heroes</h2>
+<h1>My Heroes</h1>
 
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)"> <!-- Adicionará a classe "hero" quando o objeto "hero" for igual ao "selectedHero". -->
+      routerLink="/heroes/{{hero.id}}"> <!-- Adicionará a classe "hero" quando o objeto "hero" for igual ao "selectedHero". -->
     <span>{{hero.id}} - {{hero.name}}</span>
   </li>
 </ul>
-
-<app-hero-detail [selectedHero]="selectedHero"></app-hero-detail>
-
 
 
