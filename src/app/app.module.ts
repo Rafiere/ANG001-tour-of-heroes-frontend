@@ -14,13 +14,16 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     AppRoutingModule,
     MatIconModule,
     FlexLayoutModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

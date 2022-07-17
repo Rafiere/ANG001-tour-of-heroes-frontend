@@ -1,0 +1,12 @@
+<h2>Dashboard</h2>
+
+<div fxLayout="row"
+     fxLayoutGap="12px"
+     fxLayoutAlign="space-between"
+     fxLayout.xs="column"> <!-- O "xs" é para celulares, assim, se o acesso for feito em celulares, esses cards serão exibidos no formato de coluna. -->
+  <mat-card *ngFor="let hero of heroes">
+    <mat-card-title>{{ hero.name }}</mat-card-title>
+  </mat-card>
+</div>
+
+
