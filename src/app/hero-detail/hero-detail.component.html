@@ -1,15 +1,35 @@
 <div *ngIf="hero"> <!-- Se não tivermos nenhum herói selecionado, essa div não será exibida. -->
   <h2>{{ hero.name | uppercase }} Details:</h2>
-  <div><span> id: {{ hero.id }}</span></div>
-  <div><span> nome: {{ hero.name }}</span></div>
 
-  <div>
-    <label for="name">Hero name:</label>
-    <input id="name" [(ngModel)]="hero.name" type="text" placeholder="Name">
-  </div>
+  <mat-card>
 
-  <button mat-raised-button
-          (click)="goBack()">
-  Go back
-  </button>
+    <mat-card-content fxLayout="column">
+      <mat-form-field>
+        <mat-label>ID</mat-label>
+        <input matInput disabled value="{{hero.id}}">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Hero Name</mat-label>
+        <input matInput value="{{hero.name}}">
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button
+              (click)="goBack()">
+        Go back
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <!--  <div><span> id: {{ hero.id }}</span></div>-->
+  <!--  <div><span> nome: {{ hero.name }}</span></div>-->
+
+  <!--  <div>-->
+  <!--    <label for="name">Hero name:</label>-->
+  <!--    <input id="name" [(ngModel)]="hero.name" type="text" placeholder="Name">-->
+  <!--  </div>-->
+
 </div>
