@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HeroesComponent} from "./heroes/heroes.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
-  { path: 'heroes', component: HeroesComponent } //Se tivermos na URL o "/heroes", o component "HeroesComponent" deverá ser exibido na página.
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full' }, //Quando a aplicação for inicializada, ela estará na url "", ou seja, vazia, assim, ela será redirecionada para o "/dashboard", dessa forma, o "/dashboard" será a página inicial.
+  { path: 'heroes', component: HeroesComponent }, //Se tivermos na URL o "/heroes", o component "HeroesComponent" deverá ser exibido na página.
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
