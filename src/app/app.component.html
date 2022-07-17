@@ -1,8 +1,17 @@
 <mat-toolbar color="primary">
   <span>{{ title }}</span>
+
+  <span fxFlex></span> <!-- Diretiva do Angular Flex Layout que insere um flex do CSS para deitar o componente à direita. -->
+  <button mat-icon-button
+          aria-label="Heroes List"
+          matTooltip="Heroes"
+          routerLink="/heroes"> <!-- Quando clicarmos nesse botão, seremos encaminhados para a rota "/heroes", ou seja, o componente dessa rota será exibido, como foi declarado no "app-routing.module.ts". -->
+    <mat-icon>sports_martial_arts</mat-icon>
+  </button>
+
 </mat-toolbar> <!-- Adicionando a cor primária do Angular Material. -->
 
 <div class="content">
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet> <!-- Essa tag está disponível para ser utilizada pois exportamos o "RouterModule" no "app.routing.module.ts" e importamos o "RoutingModule" no "app.module.ts", que é o módulo desse component. Quando inserirmos a URL "/heroes", o component dessa rota, que é o "heroes.component" será injetado dentro dessa rota.-->
   <app-messages></app-messages>
 </div>
