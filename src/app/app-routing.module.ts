@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {HeroesComponent} from "./heroes/heroes.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {HeroDetailComponent} from "./hero-detail/hero-detail.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full' }, //Quando a aplicação for inicializada, ela estará na url "", ou seja, vazia, assim, ela será redirecionada para o "/dashboard", dessa forma, o "/dashboard" será a página inicial.
   { path: 'heroes', component: HeroesComponent }, //Se tivermos na URL o "/heroes", o component "HeroesComponent" deverá ser exibido na página.
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'heroes/:id', component: HeroDetailComponent } //O ":id" representa um valor que será enviado pela URL.
 ];
 
 @NgModule({
