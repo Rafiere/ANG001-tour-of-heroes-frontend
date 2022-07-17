@@ -1,10 +1,15 @@
-<div *ngIf="selectedHero"> <!-- Se não tivermos nenhum herói selecionado, essa div não será exibida. -->
-  <h2>{{ selectedHero.name | uppercase }} Details:</h2>
-  <div><span> id: {{ selectedHero.id }}</span></div>
-  <div><span> nome: {{ selectedHero.name }}</span></div>
+<div *ngIf="hero"> <!-- Se não tivermos nenhum herói selecionado, essa div não será exibida. -->
+  <h2>{{ hero.name | uppercase }} Details:</h2>
+  <div><span> id: {{ hero.id }}</span></div>
+  <div><span> nome: {{ hero.name }}</span></div>
 
   <div>
     <label for="name">Hero name:</label>
-    <input id="name" [(ngModel)]="selectedHero.name" type="text" placeholder="Name">
+    <input id="name" [(ngModel)]="hero.name" type="text" placeholder="Name">
   </div>
+
+  <button mat-raised-button
+          (click)="goBack()">
+  Go back
+  </button>
 </div>
